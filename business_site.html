@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Artisans d'Aix-en-Provence - Valorisez votre savoir-faire en ligne</title>
+        <meta name="description" content="Artisan à Aix-en-Provence ? Gagnez en visibilité locale avec un site web simple et efficace. Solutions digitales sur mesure pour plombiers, menuisiers et tous les métiers de l'artisanat.">
+        
+        <!-- Balises SEO supplémentaires -->
+        <meta name="keywords" content="artisan Aix-en-Provence, site web artisan, plombier, menuisier, chauffagiste, climatisation, toiture, rénovation, digital artisanat, visibilité locale">
+        <meta name="author" content="Joris Salmon">
+        <meta name="robots" content="index, follow">
+        <meta name="geo.region" content="FR-13">
+        <meta name="geo.placename" content="Aix-en-Provence">
+    
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5a7247">
+        <meta name="msapplication-TileColor" content="#5a7247">
+        <meta name="theme-color" content="#f5f0e1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --beige: #f5f0e1;
+            --olive: #5a7247;
+            --olive-light: #6b8356;
+            --lavender: #8e7ab5;
+            --dark: #333333;
+            --light: #ffffff;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--dark);
+            background-color: var(--beige);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, button, .cta {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--light);
+            box-shadow: 0 2px 10px var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--olive);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--lavender);
+        }
+
+        .nav-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--olive);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://routes-lavande.com/wp-content/uploads/2021/05/12-%E5%A4%95%E9%98%B3%E4%B8%8B%E7%9A%84%E8%96%B0%E8%A1%A3%E8%8D%89-scaled-1-1200x675.jpg");
+            background-size: cover;
+            background-position: center;
+            color: var(--light);
+            text-align: center;
+            padding: 150px 20px 100px;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--olive);
+            color: var(--light);
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: var(--olive-light);
+        }
+
+        /* Why Section */
+        .why-section {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--olive);
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--lavender);
+            margin: 15px auto 0;
+        }
+
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .feature {
+            flex: 1 1 300px;
+            max-width: 350px;
+            padding: 30px;
+            background-color: var(--beige);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px var(--shadow);
+            text-align: center;
+        }
+
+        .feature h3 {
+            color: var(--olive);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 80px 0;
+            background-color: var(--beige);
+        }
+
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .service {
+            flex: 1 1 300px;
+            max-width: 350px;
+            padding: 30px;
+            background-color: var(--light);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        .service h3 {
+            color: var(--lavender);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 80px 0;
+            background-color: var(--light);
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+            background-color: var(--beige);
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            margin-bottom: 30px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .form-group label {
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--olive);
+            color: var(--light);
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .metiers {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        .metiers h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .metiers-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .metiers-list span {
+            background-color: rgba(255, 255, 255, 0.2);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                flex-direction: column;
+                background-color: var(--light);
+                padding: 20px;
+                box-shadow: 0 5px 10px var(--shadow);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero {
+                padding: 120px 20px 80px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+        }
+
+        /* Accessibility and Focus Styles */
+        button:focus, a:focus, input:focus, textarea:focus {
+            outline: 2px solid var(--lavender);
+            outline-offset: 2px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .feature, .service {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .feature:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .feature:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container container">
+            <a href="#" class="logo">Joris<span>Salmon</span></a>
+            <button class="nav-btn" aria-label="Menu de navigation">☰</button>
+            <nav class="nav-links">
+                <a href="#pourquoi">Pourquoi</a>
+                <a href="#services">Services</a>
+                <a href="#apropos">À propos</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero" id="hero">
+        <div class="container">
+            <h1>Votre savoir-faire mérite d'être vu.</h1>
+            <p>Aujourd'hui, vos clients vous cherchent sur Google. Être visible en ligne n'est plus une option pour les artisans d'Aix-en-Provence, c'est une nécessité.</p>
+            <a href="#contact" class="cta-button">Contactez-moi, et on en discute simplement</a>
+        </div>
+    </section>
+
+    <section class="why-section" id="pourquoi">
+        <div class="container">
+            <h2 class="section-title">Pourquoi c'est vital aujourd'hui ?</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>Présence locale = clients gagnés</h3>
+                    <p>Les artisans qui ne sont pas visibles en ligne sont invisibles pour de nombreux clients potentiels. À Aix-en-Provence, 78% des recherches de services d'artisanat se font depuis un smartphone.</p>
+                </div>
+                <div class="feature">
+                    <h3>Première impression = confiance</h3>
+                    <p>Avoir un site web de qualité crée une première impression positive et professionnelle. Vos clients potentiels jugeront votre expertise en quelques secondes sur votre présence en ligne.</p>
+                </div>
+                <div class="feature">
+                    <h3>Simplicité = tranquillité</h3>
+                    <p>Des outils numériques simples peuvent transformer votre quotidien. Fini les devis perdus et les factures compliquées. Gagnez du temps pour vous concentrer sur votre métier.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section" id="services">
+        <div class="container">
+            <h2 class="section-title">Ce que je propose</h2>
+            <div class="services">
+                <div class="service">
+                    <h3>Site simple et efficace</h3>
+                    <p>Pas de complexité inutile, juste l'essentiel pour être vu et trouvé. Une vitrine digitale qui met en valeur vos réalisations et votre expertise d'artisan.</p>
+                </div>
+                <div class="service">
+                    <h3>Référencement local</h3>
+                    <p>Apparaissez en haut des résultats de recherche quand les habitants d'Aix-en-Provence cherchent un artisan dans votre domaine. Optimisation SEO locale qui vous amène des clients.</p>
+                </div>
+                <div class="service">
+                    <h3>Aide à la gestion</h3>
+                    <p>Des outils simples pour la gestion des devis, stocks, et facturation. Adaptés à votre métier d'artisan et à votre façon de travailler, sans complications techniques.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section" id="apropos">
+        <div class="container">
+            <h2 class="section-title">Qui je suis</h2>
+            <div class="about-content">
+                <p>Je suis <strong>Joris Salmon</strong>, un jeune entrepreneur digital basé à Aix-en-Provence. Ma mission est d'accompagner les artisans locaux à se digitaliser de manière simple et sans stress.</p>
+                <p>Passionné par le développement local, je connais les spécificités du terrain et propose des solutions adaptées aux besoins des artisans d'Aix-en-Provence.</p>
+                <p>Je crois fermement que la technologie doit être au service de l'humain, et non l'inverse. C'est pourquoi je privilégie toujours des solutions simples, efficaces et orientées résultats.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Discutons ensemble de votre activité</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p><strong>Téléphone :</strong> 07 66 84 09 46</p>
+                    <p><strong>Email :</strong> joris.entrepro@gmail.com</p>
+                </div>
+                <form class="contact-form" action="https://formspree.io/f/xpwpovlb" method="POST">
+                    <div class="form-group">
+                        <label for="name">Nom</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Téléphone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="metier">Votre métier</label>
+                        <input type="text" id="metier" name="metier">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Prenons 10 minutes ensemble pour en parler</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Joris Salmon - Solutions digitales pour artisans à Aix-en-Provence</p>
+            <div class="metiers">
+                <h3>Métiers d'artisanat accompagnés</h3>
+                <div class="metiers-list">
+                    <span>Chauffage</span>
+                    <span>Climatisation</span>
+                    <span>Ventilation</span>
+                    <span>Couverture</span>
+                    <span>Isolation</span>
+                    <span>Toiture</span>
+                    <span>Menuiserie bois</span>
+                    <span>Menuiserie PVC</span>
+                    <span>Menuiserie alu</span>
+                    <span>Plomberie</span>
+                    <span>Rénovation globale</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        document.querySelector('.nav-btn').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                // Close mobile menu if open
+                document.querySelector('.nav-links').classList.remove('active');
+            });
+        });
+
+        // Form Submission (for demo purposes)
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Merci pour votre message ! Je vous recontacterai dans les plus brefs délais.');
+            this.reset();
+        });
+
+    </script>
+</body>
+</html>
